@@ -4,8 +4,9 @@ import axios from 'axios';
 import QRCode from 'qrcode';
 
 const token = localStorage.getItem('token');
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: API_BASE,
   headers: { Authorization: `Bearer ${token}` }
 });
 
